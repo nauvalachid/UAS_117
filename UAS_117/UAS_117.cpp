@@ -1,20 +1,52 @@
-// UAS_117.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
-}
+class matakuliah {
+private:
+	float presensi;
+	float activity;
+	float exercise;
+	float tugasAkhir;
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+public:
+	matakuliah() {
+		presensi = 0;
+		activity = 0;
+		exercise = 0;
+		tugasAkhir = 0;
+	}
+	virtual float hitungNilaiAkhir() { return 0; }
+	virtual void cekKelulusan() { return ; }
+	virtual void input() { return ; }
+	void setpresensi(float p) {
+		this->presensi = p;
+	}
+	float presensi() {
+		return presensi;
+	}
+	void setactivity(float a) {
+		this->activity = a;
+	}
+	float getactivity() {
+		return activity;
+	}
+	void setexercise(float e) {
+		this->exercise = e;
+	}
+	float getexercise() {
+		return exercise;
+	}
+	void settugasakhir(float ua) {
+		this->tugasAkhir = ua;
+	}
+	float gettugasakhir() {
+		return tugasAkhir;
+	}
+};
+class pemograman : public matakuliah {
+public:
+	pemograman() : matakuliah() {}
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+	float hitungNilaiAkhir() {
+		return (presensi * 0.1 ) (activity)
+	}
